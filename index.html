@@ -1,244 +1,561 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Abraham Olaoluwa Fehintola</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Abraham Olaoluwa Fehintola — Senior Software Engineer and Technical Leader specializing in enterprise financial systems, distributed architecture, cloud, security and high-volume payment platforms.">
+<title>Abraham Olaoluwa Fehintola | Senior Software Engineer</title>
+<style>
+:root{
+  --primary:#0a2540;
+  --secondary:#2f80ed;
+  --accent:#eaf3ff;
+  --text:#14213d;
+  --muted:#61708a;
+  --white:#ffffff;
+  --line:#e3eaf4;
+  --page:#f4f8fd;
+}
 
-    <style>
-        :root {
-            --primary: #0a2540;
-            --secondary: #1f6ae1;
-            --accent: #e6f0ff;
-            --text-dark: #1a1a1a;
-            --text-light: #6b7280;
-        }
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", system-ui, sans-serif;
-        }
+html{
+  scroll-behavior:smooth;
+}
 
-        body {
-            background: linear-gradient(180deg, #f8fbff, #eef4ff);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+body{
+  font-family:"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(47,128,237,.07), transparent 36%),
+    linear-gradient(180deg,#f8fbff 0%,#eef5fd 100%);
+  color:var(--text);
+  line-height:1.7;
+}
 
-        /* ===== HEADER ===== */
-        header {
-            position: relative;
-            height: 420px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            overflow: hidden;
-        }
+a{
+  color:inherit;
+}
 
-        header::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to bottom right,
-                rgba(10, 37, 64, 0.85),
-                rgba(31, 106, 225, 0.85)
-            );
-            z-index: 1;
-        }
+header{
+  width:min(1168px, calc(100% - 40px));
+  min-height:480px;
+  margin:8px auto 0;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  overflow:hidden;
+  border-radius:16px;
+  box-shadow:0 12px 34px rgba(22,59,105,.11);
+}
 
-        .header-image {
-            position: absolute;
-            inset: 0;
-            background-image: url("profile2.jpeg"); /* Replace with your image */
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.75);
-        }
+.header-image{
+  position:absolute;
+  inset:0;
+  background-image:url("./images/my_profile.jpg");
+  background-size:cover;
+  background-position:center 28%;
+  filter:brightness(.78);
+  transform:scale(1.01);
+}
 
-        .header-content {
-            position: relative;
-            z-index: 2;
-            padding: 1rem;
-        }
+header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(10,37,64,.86) 0%,rgba(26,76,132,.72) 45%,rgba(47,128,237,.68) 100%);
+}
 
-        header h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+.hero{
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:1050px;
+  padding:62px 28px;
+}
 
-        header h2 {
-            margin-top: 0.75rem;
-            font-size: 1.2rem;
-            font-weight: 400;
-            opacity: 0.95;
-        }
+.hero h1{
+  font-size:clamp(2.45rem,5vw,4rem);
+  line-height:1.08;
+  letter-spacing:-1.6px;
+  margin-bottom:16px;
+  font-weight:800;
+}
 
-        /* ===== MAIN CONTENT ===== */
-        main {
-            max-width: 1100px;
-            margin: -80px auto 4rem;
-            padding: 2rem;
-        }
+.hero h2{
+  font-size:clamp(1.05rem,2vw,1.35rem);
+  font-weight:700;
+  opacity:.96;
+  margin-bottom:24px;
+}
 
-        .card {
-            background: #fff;
-            border-radius: 18px;
-            padding: 2.5rem;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
-        }
+.contact{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
 
-        .card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-        }
+.contact a,
+.contact span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 16px;
+  border:1px solid rgba(255,255,255,.38);
+  border-radius:999px;
+  text-decoration:none;
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(7px);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
+}
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-        }
+nav{
+  width:min(1168px, calc(100% - 40px));
+  margin:10px auto 24px;
+  position:sticky;
+  top:10px;
+  z-index:20;
+  background:rgba(255,255,255,.95);
+  border:1px solid rgba(220,228,240,.9);
+  border-radius:14px;
+  box-shadow:0 8px 24px rgba(22,59,105,.09);
+  backdrop-filter:blur(12px);
+}
 
-        .skill {
-            background: var(--accent);
-            border-radius: 14px;
-            padding: 1.4rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+nav .wrap{
+  max-width:100%;
+  padding:8px 16px;
+  display:flex;
+  gap:10px;
+  overflow:auto;
+  justify-content:center;
+}
 
-        .skill:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 30px rgba(31, 106, 225, 0.25);
-        }
+nav a{
+  text-decoration:none;
+  color:var(--primary);
+  font-weight:700;
+  white-space:nowrap;
+  padding:9px 14px;
+  border-radius:10px;
+  transition:.2s ease;
+}
 
-        .skill h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.4rem;
-            color: var(--secondary);
-        }
+nav a:hover,
+nav a:focus{
+  background:var(--secondary);
+  color:#fff;
+}
 
-        .skill p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-        }
+main{
+  width:min(1168px, calc(100% - 40px));
+  margin:0 auto 55px;
+  position:relative;
+  z-index:3;
+  padding:0;
+}
 
-        /* ===== FOOTER ===== */
-        footer {
-            text-align: center;
-            padding: 2.5rem 1rem;
-            background: linear-gradient(
-                to right,
-                var(--primary),
-                var(--secondary)
-            );
-            color: #fff;
-        }
+.card{
+  background:rgba(255,255,255,.96);
+  border:1px solid rgba(227,234,244,.9);
+  border-radius:18px;
+  padding:30px 34px;
+  margin-bottom:20px;
+  box-shadow:0 12px 32px rgba(22,59,105,.07);
+}
 
-        footer p {
-            font-size: 1rem;
-            opacity: 0.95;
-        }
+.card h3{
+  color:var(--primary);
+  font-size:1.75rem;
+  margin-bottom:16px;
+  position:relative;
+  padding-bottom:11px;
+}
 
-        footer span {
-            display: block;
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
-            opacity: 0.85;
-        }
+.card h3::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:72px;
+  height:4px;
+  border-radius:4px;
+  background:var(--secondary);
+}
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.3rem;
-            }
+.summary{
+  font-size:1.03rem;
+  color:var(--muted);
+  max-width:100%;
+}
 
-            header h2 {
-                font-size: 1rem;
-            }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+  gap:14px;
+}
 
-            main {
-                margin-top: -60px;
-            }
-        }
-    </style>
+.skill{
+  background:linear-gradient(180deg,#f6faff 0%,#eaf3ff 100%);
+  border:1px solid #dfeaf8;
+  border-radius:14px;
+  padding:18px;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.skill:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 24px rgba(47,128,237,.12);
+}
+
+.skill h4{
+  color:var(--secondary);
+  margin-bottom:6px;
+  font-size:1.04rem;
+}
+
+.skill p{
+  color:var(--muted);
+  font-size:.94rem;
+}
+
+.job{
+  padding:6px 0 25px;
+}
+
+.job + .job{
+  border-top:1px solid var(--line);
+  padding-top:26px;
+}
+
+.job-head{
+  display:flex;
+  justify-content:space-between;
+  gap:18px;
+  align-items:flex-start;
+  margin-bottom:12px;
+}
+
+.job-title{
+  font-weight:800;
+  color:var(--primary);
+  font-size:1.15rem;
+}
+
+.job-meta{
+  color:var(--secondary);
+  font-weight:700;
+  text-align:right;
+}
+
+ul{
+  padding-left:20px;
+}
+
+li{
+  margin:8px 0;
+  color:#3e4c63;
+}
+
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.tag{
+  background:var(--accent);
+  color:var(--primary);
+  padding:8px 12px;
+  border-radius:10px;
+  font-size:.92rem;
+  font-weight:700;
+  border:1px solid #d9e8fb;
+}
+
+.edu{
+  display:grid;
+  gap:14px;
+}
+
+.edu-item{
+  padding:17px 18px;
+  border-left:4px solid var(--secondary);
+  background:#f8fbff;
+  border-radius:0 12px 12px 0;
+}
+
+footer{
+  width:min(1168px, calc(100% - 40px));
+  margin:0 auto 24px;
+  text-align:center;
+  padding:28px 20px;
+  border-radius:16px;
+  background:linear-gradient(110deg,var(--primary),var(--secondary));
+  color:#fff;
+  box-shadow:0 12px 30px rgba(22,59,105,.12);
+}
+
+footer p{
+  opacity:.9;
+}
+
+@media(max-width:800px){
+  header{
+    width:min(100% - 24px,1168px);
+    min-height:430px;
+  }
+  .hero{
+    padding:46px 20px;
+  }
+  nav,
+  main,
+  footer{
+    width:min(100% - 24px,1168px);
+  }
+  nav .wrap{
+    justify-content:flex-start;
+  }
+  .job-head{
+    display:block;
+  }
+  .job-meta{
+    text-align:left;
+    margin-top:5px;
+  }
+  .card{
+    padding:24px 22px;
+  }
+}
+
+@media(max-width:520px){
+  header{
+    min-height:390px;
+  }
+  .hero h1{
+    font-size:2.2rem;
+  }
+  .contact{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .contact a,
+  .contact span{
+    width:100%;
+  }
+}
+
+.section-icon{
+  color:var(--secondary);
+  margin-right:10px;
+  font-size:.92em;
+}
+.skill-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  margin-right:9px;
+  border-radius:9px;
+  background:rgba(47,128,237,.12);
+  color:var(--secondary);
+  vertical-align:middle;
+}
+.contact i{
+  font-size:.95rem;
+}
+nav a i{
+  margin-right:5px;
+  color:var(--secondary);
+}
+nav a:hover i,
+nav a:focus i{
+  color:#fff;
+}
+
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin-top:18px;
+}
+.hero-actions a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:11px 18px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:750;
+  transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.hero-actions a:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(0,0,0,.18);
+}
+.book-btn{
+  background:#fff;
+  color:var(--primary);
+  border:1px solid rgba(255,255,255,.9);
+}
+.coffee-btn{
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.45);
+  backdrop-filter:blur(8px);
+}
+@media(max-width:520px){
+  .hero-actions{
+    flex-direction:column;
+  }
+  .hero-actions a{
+    width:100%;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
+<header>
+  <div class="header-image"></div>
+  <div class="hero">
+    <h1>Abraham Olaoluwa Fehintola</h1>
+    <h2>Technical Leader · Senior Full-Stack Software Engineer · Enterprise Financial Systems</h2>
+    <div class="contact">
+      <a href="tel:+2348021445535" aria-label="Call Abraham Olaoluwa Fehintola">
+<i class="bi bi-telephone-fill"></i> +(234) 802 144 5535
+</a>
+<a href="https://wa.me/2348021445535" target="_blank" rel="noopener noreferrer" aria-label="Chat with Abraham on WhatsApp">
+<i class="bi bi-whatsapp"></i> WhatsApp
+</a>
+      <a href="mailto:abrahamolaoluwa3@gmail.com"><i class="bi bi-envelope-fill"></i> abrahamolaoluwa3@gmail.com</a>
+      <a href="https://www.linkedin.com/in/abraham-olaoluwa-fehintola/" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
+    </div>
+    <div class="hero-actions">
+      <a class="book-btn" href="https://calendly.com/abrahamolaoluwa3/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a 30 minute meeting with Abraham">
+        <i class="bi bi-calendar2-check-fill"></i> Book a Time With Me
+      </a>
+      <a class="coffee-btn" href="tel:+2348021445535" aria-label="Call Abraham">
+        <i class="bi bi-cup-hot-fill"></i> Buy Me a Coffee
+      </a>
+    </div>
+  </div>
+</header>
 
-    <!-- HEADER -->
-    <header>
-        <div class="header-image"></div>
-        <div class="header-content">
-            <h1>Abraham Olaoluwa Fehintola</h1>
-            <h2>Senior Software Developer · Backend Engineer</h2>
-        </div>
-    </header>
+<nav><div class="wrap">
+<a href="#about"><i class="bi bi-person"></i> About</a><a href="#skills"><i class="bi bi-gear"></i> Technical Skills</a><a href="#experience"><i class="bi bi-briefcase"></i> Experience</a>
+<a href="#education"><i class="bi bi-mortarboard"></i> Education</a><a href="#certifications"><i class="bi bi-award"></i> Certifications</a><a href="#community"><i class="bi bi-people"></i> Community</a>
+</div></nav>
 
-    <!-- MAIN -->
-    <main>
-		<section class="card" style="margin-bottom: 2.5rem;">
-		<br/>
-			<h3>About Me</h3>
+<main>
+<section class="card" id="about">
+<h3><i class="bi bi-person-circle section-icon"></i> Professional Summary</h3>
+<p class="summary">Strategic and results-driven Technical Leader and Full-Stack Software Engineer with extensive experience designing, delivering, and optimizing large-scale, mission-critical systems. Proven track record of owning end-to-end solution architecture, guiding cross-functional engineering teams, and executing complex projects in highly regulated environments. Deep expertise in .NET, C#, Java, Kotlin, Azure, AWS, and cloud-native architectures, with a strong ability to align technical decisions with business objectives, performance, security, and scalability goals. Highly skilled in financial systems, engineering standards, mentoring, and high-impact platforms supporting transaction-intensive workloads.</p>
+</section>
 
-			<p style="font-size: 1.05rem; color: var(--text-light); max-width: 800px;">
-				I am a lover of God, deeply inspired by faith, purpose, and growth.
-				Beyond technology, music is my creative escape a source of calm,
-				expression, and reflection. I also have a strong passion for traveling,
-				exploring new cultures, perspectives, and experiences that broaden my
-				understanding of the world and fuel innovation.
-			</p>
-		</section>
-		
-        <section class="card">
-			
-            <h3>Professional Proficiency</h3>
+<section class="card" id="skills">
+<h3><i class="bi bi-gear-wide-connected section-icon"></i> Technical Skills</h3>
+<div class="grid">
+<div class="skill"><h4><i class="bi bi-code-slash skill-icon"></i>Languages & Frameworks</h4><p>C#, .NET 6/7/8, ASP.NET Core, .NET MAUI, Blazor, Java, Python, TypeScript, JavaScript, React, WPF</p></div>
+<div class="skill"><h4><i class="bi bi-diagram-3-fill skill-icon"></i>APIs & Integration</h4><p>RESTful APIs, SOAP, GraphQL, gRPC, enterprise middleware and third-party integrations</p></div>
+<div class="skill"><h4><i class="bi bi-boxes skill-icon"></i>Architecture</h4><p>Microservices, Clean Architecture, Domain-Driven Design (DDD), MVC, CQRS, Onion Architecture, Saga orchestration, event-driven systems</p></div>
+<div class="skill"><h4><i class="bi bi-database-fill skill-icon"></i>Databases & Data</h4><p>Oracle, SQL Server, PostgreSQL, MySQL, Azure SQL, Cosmos DB, Bigtable, Spanner, BigQuery, Firestore</p></div>
+<div class="skill"><h4><i class="bi bi-cloud-fill skill-icon"></i>Azure & GCP</h4><p>Azure App Service, Functions, Logic Apps, Service Bus, Azure SQL, Cosmos DB, AKS/GKE, GCP, Terraform, Azure DevOps</p></div>
+<div class="skill"><h4><i class="bi bi-cloud-arrow-up-fill skill-icon"></i>AWS</h4><p>EC2, containers, Elastic Beanstalk, VPC, Fargate, Lambda, Direct Connect, IAM, Landing Zone, Control Tower</p></div>
+<div class="skill"><h4><i class="bi bi-infinity skill-icon"></i>DevOps</h4><p>Azure DevOps, GitHub Actions, Jenkins, Cloud Build, Bazel, Docker, Kubernetes, CI/CD</p></div>
+<div class="skill"><h4><i class="bi bi-activity skill-icon"></i>Observability</h4><p>Azure Monitor, Application Insights, Grafana, Datadog, Google Cloud Monitoring/Logging, OpenTelemetry, Splunk</p></div>
+<div class="skill"><h4><i class="bi bi-clipboard2-check-fill skill-icon"></i>Testing & API Tools</h4><p>xUnit, NUnit, MSTest, JUnit, Jest, Mocha, Cypress, Insomnia, Postman, JMeter</p></div>
+<div class="skill"><h4><i class="bi bi-shield-lock-fill skill-icon"></i>Security</h4><p>SAML, SSO, OIDC, OAuth 2.0, JWT, RSA, AES (CTR/CBC/GCM), PGP, secure API design</p></div>
+</div>
+</section>
 
-            <div class="skills-grid">
-                <div class="skill">
-                    <h4>Backend Development</h4>
-                    <p>Designing scalable, secure, and high-performance backend systems.</p>
-                </div>
+<section class="card" id="experience">
+<h3><i class="bi bi-briefcase-fill section-icon"></i> Professional Experience</h3>
 
-                <div class="skill">
-                    <h4>.NET & C#</h4>
-                    <p>Enterprise-grade APIs, services, and financial system integrations.</p>
-                </div>
+<article class="job">
+<div class="job-head"><div><div class="job-title">Senior Software Engineer</div><strong>FirstBank of Nigeria</strong></div><div class="job-meta">May 2022 – Present · Hybrid</div></div>
+<ul>
+<li>Built scalable backend systems for local and international payment platforms using C#, ASP.NET, Blazor, React, and Azure/AWS ecosystems.</li>
+<li>Led system architecture using DDD, Clean Architecture, CQRS, Saga orchestration, and event-driven microservices, defining service boundaries and asynchronous communication patterns for resilient distributed payment systems.</li>
+<li>Engineered secure REST, GraphQL, and gRPC service layers and optimized throughput and latency for high-volume payment transactions.</li>
+<li>Implemented enterprise authentication and authorization using SAML, SSO, OIDC, OAuth 2.0, and JWT, alongside encryption using RSA, AES (CTR, CBC, GCM), and PGP.</li>
+<li>Designed and optimized SQL Server, Azure SQL, and Oracle solutions using EF Core, T-SQL, indexing, execution-plan analysis, partitioning, and caching.</li>
+<li>Automated CI/CD using Azure DevOps and Git workflows; containerized services with Docker and deployed microservices to AKS/Kubernetes with environment consistency and zero-downtime release practices.</li>
+<li>Delivered cloud-native solutions using Azure App Service, Azure Functions, Logic Apps, Azure Service Bus, and Kafka for scalable and fault-tolerant processing.</li>
+<li>Implemented unit, integration, UI/E2E, and performance testing using xUnit, Jest, Cypress, and JMeter, with approximately 80–90% unit/integration test coverage.</li>
+<li>Leveraged GitHub Copilot, Claude, and ChatGPT for coding, test generation, and technical documentation to improve engineering velocity and quality.</li>
+<li>Led technical design, mentored junior developers, enforced coding standards, and collaborated with Product, QA, DevOps, Business, Operations, and ML/Data teams.</li>
+<li><strong>Selected projects:</strong> National Payment Stack (NPS) ISO 20022 engineering using DDD and event-driven architecture; Master-Link (Mastercard) cross-border payments; Central Cross-Border Money Transfer Middleware for Thunes and MoneyGram; Card Payments Direct Routing.</li>
+</ul>
+</article>
 
-                <div class="skill">
-                    <h4>Database Engineering</h4>
-                    <p>SQL Server, MySQL, data modeling, optimization, and recovery.</p>
-                </div>
+<article class="job">
+<div class="job-head"><div><div class="job-title">Software Engineer</div><strong>IAEA Data Forensics</strong></div><div class="job-meta">June 2019 – August 2022</div></div>
+<ul>
+<li>Designed and deployed a Record Management System using C#/.NET Core 6 with AWS S3 integration for secure, scalable document storage and retrieval.</li>
+<li>Implemented OAuth 2.0 authorization workflows for web APIs using Java, strengthening authentication, access control, and token management.</li>
+<li>Developed custom API integrations between internal systems and third-party applications, supporting reliable data exchange and consistency.</li>
+<li>Contributed to Oracle SQL and Microsoft SQL Server performance tuning, reducing query execution time by 30% through indexing improvements.</li>
+</ul>
+</article>
 
-                <div class="skill">
-                    <h4>System Integration</h4>
-                    <p>Payment systems, encryption, APIs, and middleware solutions.</p>
-                </div>
+<article class="job">
+<div class="job-head"><div><div class="job-title">Analyst</div><strong>Nigeria Sovereign Investment Authority (NSIA)</strong></div><div class="job-meta">March 2022 – May 2022</div></div>
+<ul>
+<li>Developed automated data pipelines to streamline ETL processes.</li>
+<li>Assisted with predictive analytics modeling to improve forecasting for business operations.</li>
+<li>Created interactive Power BI dashboards for real-time, data-driven insights.</li>
+</ul>
+</article>
+</section>
 
-                <div class="skill">
-                    <h4>Cloud & Infrastructure</h4>
-                    <p>Linux servers, deployment pipelines, and performance monitoring.</p>
-                </div>
+<section class="card" id="education">
+<h3><i class="bi bi-mortarboard-fill section-icon"></i> Education</h3>
+<div class="edu">
+<div class="edu-item"><h4>M.Sc. Computer Science</h4><p>University of Lagos · November 2025</p></div>
+<div class="edu-item"><h4>B.Sc. Computer Science — First-Class Honors</h4><p>Bowen University, Nigeria · November 2020</p></div>
+</div>
+</section>
 
-                <div class="skill">
-                    <h4>Security & Reliability</h4>
-                    <p>Authentication, encryption, logging, and fault-tolerant design.</p>
-                </div>
-            </div>
-        </section>
-		
-		
-    </main>
+<section class="card" id="certifications">
+<h3><i class="bi bi-patch-check-fill section-icon"></i> Certifications</h3>
+<div class="tags">
+<span class="tag">AWS Certified Solutions Architect – Professional (In View)</span>
+<span class="tag">Google Cloud Associate Engineer</span>
+<span class="tag">CCNA</span>
+<span class="tag">Oracle Certified Associate – Java Programmer</span>
+<span class="tag">Secure Coding Certification</span>
+</div>
+</section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>Warm Season’s Greetings 🎄✨</p>
-        <span>Wishing you peace, progress, and success — today and always.</span>
-    </footer>
+<section class="card" id="community">
+<h3><i class="bi bi-people-fill section-icon"></i> Volunteer & Communities</h3>
+<div class="grid">
+<div class="skill"><h4><i class="bi bi-code-square skill-icon"></i>Trustesse</h4><p>Software Engineer</p></div>
+<div class="skill"><h4><i class="bi bi-people-fill skill-icon"></i>Major League Hacking (MLH)</h4><p>Developer community participation, collaboration, continuous learning, and knowledge sharing.</p></div>
+</div>
+</section>
 
+<section class="card">
+<h3><i class="bi bi-stars section-icon"></i> Activities & Interests</h3>
+<p class="summary">Passionate about knowledge-sharing and mentoring in technology communities. Enjoys music and values continuous personal growth, community, and family.</p>
+</section>
+</main>
+
+<footer><strong>Abraham Olaoluwa Fehintola</strong><p>Senior Software Engineer · Technical Leader · Building secure, scalable and resilient systems.</p></footer>
 </body>
 </html>
